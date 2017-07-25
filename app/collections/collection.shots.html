@@ -1,0 +1,8 @@
+<div style="display: inline-block; padding: 10px;" ng-repeat="shot in csc.model.shots.shots">
+    <img ng-src="{{shot.avatar}}"
+         ng-click="csc.model.showShot(shot.id)"
+
+         width="200" ng-attr-alt="{{shot.title}}">
+    <br>
+    <h5>{{shot.id}} - {{shot.title}}</h5>
+</div>

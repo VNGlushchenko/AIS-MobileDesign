@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Mobile Design</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-app="app" ng-strict-di>
+<div class="container-fluid">
+
+    <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em;">
+        <div class="col-xs-6 text-right">
+            <a ui-sref="dashboard">Dashboard</a>
+        </div>
+        <div class="col-xs-6">
+            <a ui-sref="collections">Collections</a>
+        </div>
+    </div>
+    <br>
+    <ui-view></ui-view>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+<script src="app/core.module.js"></script>
+<script src="app/routing.js"></script>
+<script src="app/models/shots.model.js"></script>
+<script src="app/models/collections.model.js"></script>
+<script src="app/dashboard/dashboard.controller.js"></script>
+<script src="app/shots/shot.controller.js"></script>
+<script src="app/collections/collections.controller.js"></script>
+<script src="app/collections/collection.shots.controller.js"></script>
+
+
+</body>
+</html>
