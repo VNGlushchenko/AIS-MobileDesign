@@ -6,22 +6,14 @@
         .module("app")
         .factory("CollectionModel", CollectionModel);
 
-    CollectionModel.$inject = ['$http'];
+    CollectionModel.$inject = ['$resource'];
 
-    function CollectionModel($http) {
+    function CollectionModel($resource) {
         
         let collections = {
-            getAll: getAll,
-            getCollectionShots: getCollectionShots
+            getAll: $resource('http://dev-api.mobile.design/api/collections'),
+            getCollectionShots: $resource('http://dev-api.mobile.design/api/collections/:id/shots')
         };
-
-        function getAll() {
-            return $http.get('http://dev-api.mobile.design/api/collections')
-        }
-
-        function getCollectionShots(id) {
-            return $http.get(`http://dev-api.mobile.design/api/collections/${id}/shots`)
-        }
 
         return collections;
 

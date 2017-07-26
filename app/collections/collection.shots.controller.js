@@ -12,17 +12,10 @@
         let vm = this;
 
         vm.model = {
-            shots: {},
+            shots: CollectionModel.getCollectionShots.get({id: $stateParams.id}),
             showShot: showShot
         };
 
-        activate();
-
-        function activate() {
-            CollectionModel.getCollectionShots($stateParams.id).then(
-                response => vm.model.shots = response.data
-            )
-        }
         function showShot(shotId) {
             $state.go('shot',{id: shotId});
         }

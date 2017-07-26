@@ -1,0 +1,15 @@
+<div ng-controller="FeedbackController">
+	<ng-form name="feedback" novalidate ng-submit="fc.menu.submit($event)">
+	<label for ></label>
+		<input type="email" ng-model="fc.model.email" name="email" required>
+		<br>
+		<br>
+	    <input type="text" ng-model="fc.model.name" name="name" required min="3">
+	    <br>
+	    <br>
+	    <textarea ng-model="fc.model.message" name="message" maxlength="500" required></textarea>
+	    <br>
+	    <br>
+	    <input type="submit" value="Submit">
+	</form>
+</div>

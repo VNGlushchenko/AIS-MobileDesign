@@ -8,33 +8,62 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog-theme-default.min.css" integrity="sha256-22ZpURz0ovxp2GMLT9auj5RkFjF6XMQBYCMH4nCigmo=" crossorigin="anonymous" />
+    <style type="text/css">
+    	.curpointer {
+    		cursor: pointer;
+    	}
+    </style>
 </head>
 <body ng-app="app" ng-strict-di>
 <div class="container-fluid">
 
     <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em;">
-        <div class="col-xs-6 text-right">
-            <a ui-sref="dashboard">Dashboard</a>
+        <div class="col-xs-4 text-right">
+            <a ui-sref="dashboard">DASHBOARD</a>
         </div>
-        <div class="col-xs-6">
-            <a ui-sref="collections">Collections</a>
+        <div class="col-xs-4  text-center">
+            <a ui-sref="collections">COLLECTIONS</a>
+        </div>
+        <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
+            <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
         </div>
     </div>
     <br>
     <ui-view></ui-view>
+    <br>
+    <br>
+
+    <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em; margin-top: 11px;">
+        <div class="col-xs-4 text-right">
+            <a ui-sref="dashboard">DASHBOARD</a>
+        </div>
+        <div class="col-xs-4 text-center">
+            <a ui-sref="collections">COLLECTIONS</a>
+        </div>
+        <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
+            <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
+        </div>
+    </div>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/js/ngDialog.min.js"></script>
 
 <script src="app/core.module.js"></script>
 <script src="app/routing.js"></script>
 <script src="app/models/shots.model.js"></script>
 <script src="app/models/collections.model.js"></script>
+<script src="app/models/feedback.model.js"></script>
 <script src="app/dashboard/dashboard.controller.js"></script>
 <script src="app/shots/shot.controller.js"></script>
 <script src="app/collections/collections.controller.js"></script>
 <script src="app/collections/collection.shots.controller.js"></script>
+<script src="app/feedback/main.feedback.controller.js"></script>
+<script src="app/feedback/feedback.controller.js"></script>
 
 
 </body>

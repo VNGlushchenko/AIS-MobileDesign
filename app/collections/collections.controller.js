@@ -18,14 +18,14 @@
         activate();
 
         function activate() {
-            CollectionModel.getAll().then(
+            CollectionModel.getAll.get().$promise.then(
                 response => {
-                    vm.model.collections = response.data.collections;
-                    vm.model.collections[0].avatar = '/app/images/iOS.png';
-                    vm.model.collections[1].avatar = '/app/images/Android.jpg';
-                }
-            )
+                    let collectionsResponse = response;
+                    collectionsResponse.collections[0].avatar = '/app/images/iOS.png';
+                    collectionsResponse.collections[1].avatar = '/app/images/Android.jpg';
+                    vm.model.collections = collectionsResponse.collections;
+            });
+                    
         }
     }
-
 })();
