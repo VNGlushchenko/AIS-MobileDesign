@@ -11,7 +11,11 @@
     function FeedbackModel($resource) {
         
         let menu = {
-            sendFeedback: $resource('http://dev-api.mobile.design/api/feedbacks?email=:email&name=:name&message=:message')
+            sendFeedback: $resource('http://dev-api.mobile.design/api/feedbacks'/*, {
+                email: '@email',
+                name: '@name',
+                message: '@message'
+            }*/)
         };
 
         return menu;
