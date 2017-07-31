@@ -6,28 +6,33 @@
         .module("app")
         .controller("MainFeedbackController", MainFeedbackController);
 
-    MainFeedbackController.$inject = ['ngDialog'];
+    MainFeedbackController.$inject = ['ngDialog', 'FeedbackModel'];
 
-    function MainFeedbackController(ngDialog) {
+    function MainFeedbackController(ngDialog, FeedbackModel) {
 
         let vm = this;
 
         vm.menu = {
-            openFeedbackForm: openFeedbackForm
+            openFeedbackForm: openFeedbackForm,
+            checkFeedbackSuccess: FeedbackModel
         };
 
         function openFeedbackForm() {
             ngDialog.open({
                 template: 'app/feedback/feedback.template.html',
                 className: 'ngdialog-theme-default',
-                /*controller: 'FeedbackController',
-                controllerAs: 'fc',*/
                 width: '600px',
-                preCloseCallback: function(value) {
-                    if (confirm('Are you sure you want to close without saving your changes?')) {
+                controller: 'FeedbackController',
+                controllerAs: 'fc',
+                preCloseCallback: function() {
+                    if (vm.menu.checkFeedbackSuccess.getFeedbackSuccess()) {
+                    	return true;
+                    } else {
+                    	if (confirm('Are you sure you want to close without saving your changes?')) {
                         return true;
+                    	}
+                    	return false;
                     }
-                    return false;
                 }
             });
         }

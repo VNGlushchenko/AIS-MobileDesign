@@ -10,13 +10,20 @@
 
     function FeedbackModel($resource) {
         
+        let feedbackSuccess = false;
         let menu = {
-            sendFeedback: $resource('http://dev-api.mobile.design/api/feedbacks'/*, {
-                email: '@email',
-                name: '@name',
-                message: '@message'
-            }*/)
+            sendFeedback: $resource('http://dev-api.mobile.design/api/feedbacks'),
+            getFeedbackSuccess: getFeedbackSuccess,
+            setFeedbackSuccess: setFeedbackSuccess
         };
+
+        function getFeedbackSuccess(param) {
+            return feedbackSuccess;
+        }
+
+        function setFeedbackSuccess(param) {
+            feedbackSuccess = param;
+        }
 
         return menu;
 

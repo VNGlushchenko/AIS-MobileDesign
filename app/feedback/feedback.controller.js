@@ -6,36 +6,45 @@
         .module("app")
         .controller("FeedbackController", FeedbackController);
 
-    FeedbackController.$inject = ['FeedbackModel'];
+    FeedbackController.$inject = ['FeedbackModel','$timeout','ngDialog'];
 
-    function FeedbackController(FeedbackModel) {
+    function FeedbackController(FeedbackModel, $timeout, ngDialog) {
 
         let vm = this;
 
         vm.model = {
             email: '',
             name: '',
-            message: ''
+            message: '',
+            success: false,
+            error: false
         };
 
         vm.menu = {
 
             submit: submit
+
         };
 
-        function submit(event) {
-            //event.preventDefault();
+        function submit() {
             FeedbackModel.sendFeedback.save({
-            email: feedbackForm.email.value,/*vm.model.email*/
-            name: feedbackForm.name.value/*vm.model.name*/,
-            message: feedbackForm.message.value /*vm.model.message*/
-        }).$promise.then(response => {
-            if (response.status == 201) {
-                console.log('Success');/*event.element.parent.html('<span>Your feedback has successfully been sent.</span>');*/
-            } else {
-                console.log('Error');/*event.element.parent.html('<span>Sorry. Something went wrong. Please, try again.</span>');*/
-            }
-        });
+                email: vm.model.email,
+                name: vm.model.name,
+                message: vm.model.message
+            }).$promise.then(
+            
+                response => {
+                    FeedbackModel.setFeedbackSuccess(true);
+                    vm.model.success = true;
+                    vm.model.error = false;
+                    $timeout(ngDialog.close(), 3000);
+                },
+
+                response => {
+                    vm.model.error = true;
+                }
+
+            );
         }
 
     }

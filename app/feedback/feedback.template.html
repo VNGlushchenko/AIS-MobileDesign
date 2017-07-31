@@ -1,5 +1,5 @@
 <div>
-	<form name="feedbackForm" ng-controller="FeedbackController as fc" novalidate ng-submit="fc.menu.submit($event)">
+	<form ng-if="!fc.model.success" name="feedbackForm" novalidate ng-submit="fc.menu.submit()">
 		<label for="email" >Enter your email:</label>
 		<input type="email" ng-model="fc.model.email" name="email" id="email" required placeholder="username@example.com">
 		<br>
@@ -14,4 +14,14 @@
 	    <br>
 	    <input type="submit" value="Submit">
 	</form>
+
+	<div ng-if="fc.model.success" style="padding-top: 100px; padding-bottom: 100px; color: green;">
+		<p>Your feedback has been successfully sent.</p>
+		<p>Thank you for your feedback.</p>
+	</div>
+	<br>
+	<div ng-if="fc.model.error" style="color:red;">
+		<p>Your feedback has not sent.</p>
+		<p>Please, fill out the form fields correctly.</p>
+	</div>
 </div>
