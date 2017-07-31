@@ -4,18 +4,20 @@
 
     angular
         .module("app")
-        .controller("FeedbackController", FeedbackController);
+        .controller("InnerFeedbackController", InnerFeedbackController);
 
-    FeedbackController.$inject = ['FeedbackModel','$timeout','ngDialog'];
+    InnerFeedbackController.$inject = ['FeedbackModel','$timeout','ngDialog'];
 
-    function FeedbackController(FeedbackModel, $timeout, ngDialog) {
+    function InnerFeedbackController(FeedbackModel, $timeout, ngDialog) {
 
         let vm = this;
 
         vm.model = {
-            email: '',
-            name: '',
-            message: '',
+            feedback: {
+                email: '',
+                name: '',
+                message: ''
+            },
             success: false,
             error: false
         };
@@ -27,11 +29,7 @@
         };
 
         function submit() {
-            FeedbackModel.sendFeedback.save({
-                email: vm.model.email,
-                name: vm.model.name,
-                message: vm.model.message
-            }).$promise.then(
+            FeedbackModel.sendFeedback.save(vm.model.feedback).$promise.then(
             
                 response => {
                     FeedbackModel.setFeedbackSuccess(true);

@@ -22,16 +22,13 @@
                 template: 'app/feedback/feedback.template.html',
                 className: 'ngdialog-theme-default',
                 width: '600px',
-                controller: 'FeedbackController',
-                controllerAs: 'fc',
+                controller: 'InnerFeedbackController',
+                controllerAs: 'ifc',
                 preCloseCallback: function() {
                     if (vm.menu.checkFeedbackSuccess.getFeedbackSuccess()) {
                     	return true;
                     } else {
-                    	if (confirm('Are you sure you want to close without saving your changes?')) {
-                        return true;
-                    	}
-                    	return false;
+                    	return confirm('Are you sure you want to close without saving your changes?');
                     }
                 }
             });
