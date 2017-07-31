@@ -1,27 +1,26 @@
 <div>
-	<form ng-if="!ifc.model.success" name="feedbackForm" novalidate ng-submit="ifc.menu.submit()">
-		<label for="email" >Enter your email:</label>
-		<input type="email" ng-model="ifc.model.feedback.email" name="email" id="email" required placeholder="username@example.com">
-		<br>
-		<br>
-		<label for="name" >Enter your name:</label>
-	    <input type="text" ng-model="ifc.model.feedback.name" name="name" id="name" required>
-	    <br>
-	    <br>
-	    <label for="name" >Enter your message:</label>
-	    <textarea ng-model="ifc.model.feedback.message" name="message" maxlength="500" required id="message"></textarea>
-	    <br>
-	    <br>
-	    <input type="submit" value="Submit">
-	</form>
-
-	<div ng-if="ifc.model.success" style="padding-top: 100px; padding-bottom: 100px; color: green;">
-		<p>Your feedback has been successfully sent.</p>
-		<p>Thank you for your feedback.</p>
-	</div>
-	<br>
-	<div ng-if="ifc.model.error" style="color:red;">
-		<p>Your feedback has not sent.</p>
-		<p>Please, fill out the form fields correctly.</p>
-	</div>
+   <form ng-if="!ifc.model.success" name="feedbackForm" novalidate ng-submit="ifc.menu.submit()">
+      <label for="email" >Enter your email:</label>
+      <input type="email" ng-model="ifc.model.feedback.email" name="email" id="email" required placeholder="username@example.com">
+      <br>
+      <br>
+      <label for="name" >Enter your name:</label>
+      <input type="text" ng-model="ifc.model.feedback.name" name="name" id="name" required>
+      <br>
+      <br>
+      <label for="name" >Enter your message:</label>
+      <textarea ng-model="ifc.model.feedback.message" name="message" maxlength="500" required id="message"></textarea>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+   </form>
+   <div ng-if="ifc.model.success" style="padding-top: 100px; padding-bottom: 100px; color: green;">
+      <p>Your feedback has been successfully sent.</p>
+      <p>Thank you for your feedback.</p>
+   </div>
+   <br>
+   <div ng-if="ifc.model.error" style="color:red;">
+      <p>Your feedback has not sent.</p>
+      <p>Please, fill out the form fields correctly.</p>
+   </div>
 </div>

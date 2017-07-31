@@ -1,70 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-    <base href="/">
-    <meta charset="UTF-8">
-    <title>Mobile Design</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css" integrity="sha256-ez2qe0qzAftORrn20vwIkez4lq8ZsXRHqbmRfysqzZA=" crossorigin="anonymous" />
-    <style type="text/css">
-    	.curpointer {
-    		cursor: pointer;
-    	}
-    </style>
-</head>
-<body ng-app="app" ng-strict-di>
-<div class="container-fluid">
-
-    <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em;">
-        <div class="col-xs-4 text-right">
-            <a ui-sref="dashboard">DASHBOARD</a>
-        </div>
-        <div class="col-xs-4  text-center">
-            <a ui-sref="collections">COLLECTIONS</a>
-        </div>
-        <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
-            <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
-        </div>
-    </div>
-    <br>
-    <ui-view></ui-view>
-    <br>
-    <br>
-
-    <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em; margin-top: 11px;">
-        <div class="col-xs-4 text-right">
-            <a ui-sref="dashboard">DASHBOARD</a>
-        </div>
-        <div class="col-xs-4 text-center">
-            <a ui-sref="collections">COLLECTIONS</a>
-        </div>
-        <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
-            <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
-        </div>
-    </div>
-
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js" integrity="sha256-yzIzyPxO1aQpJzFMpDk86/0gpmmSoXozhAH9ImwnrBg=" crossorigin="anonymous"></script>
-
-<script src="app/core.module.js"></script>
-<script src="app/routing.js"></script>
-<script src="app/models/shots.model.js"></script>
-<script src="app/models/collections.model.js"></script>
-<script src="app/models/feedback.model.js"></script>
-<script src="app/dashboard/dashboard.controller.js"></script>
-<script src="app/shots/shot.controller.js"></script>
-<script src="app/collections/collections.controller.js"></script>
-<script src="app/collections/collection.shots.controller.js"></script>
-<script src="app/feedback/main.feedback.controller.js"></script>
-<script src="app/feedback/inner.feedback.controller.js"></script>
-
-
-</body>
+   <head>
+      <base href="/">
+      <meta charset="UTF-8">
+      <title>Mobile Design</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css" integrity="sha256-ez2qe0qzAftORrn20vwIkez4lq8ZsXRHqbmRfysqzZA=" crossorigin="anonymous" />
+      <style type="text/css">
+         .curpointer {
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body ng-app="app" ng-strict-di>
+      <div class="container-fluid">
+         <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em;">
+            <div class="col-xs-4 text-right">
+               <a ui-sref="dashboard">DASHBOARD</a>
+            </div>
+            <div class="col-xs-4  text-center">
+               <a ui-sref="collections">COLLECTIONS</a>
+            </div>
+            <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
+               <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
+            </div>
+         </div>
+         <br>
+         <ui-view></ui-view>
+         <br>
+         <br>
+         <div class="row" style="background-color: lightblue; padding: 10px; font-size: 1.3em; margin-top: 11px;">
+            <div class="col-xs-4 text-right">
+               <a ui-sref="dashboard">DASHBOARD</a>
+            </div>
+            <div class="col-xs-4 text-center">
+               <a ui-sref="collections">COLLECTIONS</a>
+            </div>
+            <div class="col-xs-4  text-left" ng-controller="MainFeedbackController as mfc">
+               <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js" integrity="sha256-yzIzyPxO1aQpJzFMpDk86/0gpmmSoXozhAH9ImwnrBg=" crossorigin="anonymous"></script>
+      <script src="app/core.module.js"></script>
+      <script src="app/routing.js"></script>
+      <script src="app/models/shots.model.js"></script>
+      <script src="app/models/collections.model.js"></script>
+      <script src="app/models/feedback.model.js"></script>
+      <script src="app/dashboard/dashboard.controller.js"></script>
+      <script src="app/shots/shot.controller.js"></script>
+      <script src="app/collections/collections.controller.js"></script>
+      <script src="app/collections/collection.shots.controller.js"></script>
+      <script src="app/feedback/main.feedback.controller.js"></script>
+      <script src="app/feedback/inner.feedback.controller.js"></script>
+   </body>
 </html>
