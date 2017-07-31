@@ -12,7 +12,10 @@
         let vm = this;
 
         vm.model = {
-            shots: {},
+            shots: [],
+        };
+
+        vm.menu = {
             showShot: showShot
         };
 
