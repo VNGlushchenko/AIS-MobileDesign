@@ -37,7 +37,7 @@
                     FeedbackModel.setFeedbackSuccess(true);
                     vm.model.success = true;
                     vm.model.error = false;
-                    $timeout(ngDialog.close(), 3000);
+                    $timeout(ngDialog.close, 5000);
                 },
 
                 response => {
