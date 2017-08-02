@@ -1,0 +1,12 @@
+<div class="row" style="background-color: lightblue; font-size: 1.3em;">
+   <ng-transclude></ng-transclude>
+   <div class="col-xs-3 text-right">
+      <a ui-sref="dashboard">DASHBOARD</a>
+   </div>
+   <div class="col-xs-3  text-center">
+      <a ui-sref="collections">COLLECTIONS</a>
+   </div>
+   <div class="col-xs-3  text-left" ng-controller="MainFeedbackController as mfc">
+      <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
+   </div>
+</div>

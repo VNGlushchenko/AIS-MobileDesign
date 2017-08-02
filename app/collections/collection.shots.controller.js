@@ -12,7 +12,10 @@
         let vm = this;
 
         vm.model = {
-            shots: CollectionModel.getCollectionShots.get({id: $stateParams.id}),
+            shots: CollectionModel.getCollectionShots.get({id: $stateParams.id})
+        };
+
+        vm.menu = {
             showShot: showShot
         };
 
