@@ -8,9 +8,20 @@
          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css" integrity="sha256-ez2qe0qzAftORrn20vwIkez4lq8ZsXRHqbmRfysqzZA=" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <style type="text/css">
          .curpointer {
          cursor: pointer;
+         }
+         .material-icons.md-48 {
+          position: absolute;
+          right: 2px;
+          bottom: 2px;
+          background-color: white;
+         }
+
+         img.shot {
+            border: 1px solid lightblue;
          }
       </style>
    </head>
@@ -21,6 +32,7 @@
                <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo">
             </div>
          </app-header>
+         <app-platforms></app-platforms>
          <br>
          <ui-view></ui-view>
          <app-header>
@@ -38,6 +50,7 @@
       <script src="app/models/shots.model.js"></script>
       <script src="app/models/collections.model.js"></script>
       <script src="app/models/feedback.model.js"></script>
+      <script src="app/models/platforms.model.js"></script>
       <script src="app/dashboard/dashboard.controller.js"></script>
       <script src="app/shots/shot.controller.js"></script>
       <script src="app/collections/collections.controller.js"></script>
@@ -46,5 +59,6 @@
       <script src="app/feedback/inner.feedback.controller.js"></script>
       <script src="app/directives/header.directive.js"></script>
       <script src="app/directives/shot.directive.js"></script>
+      <script src="app/directives/platforms.directive.js"></script>
    </body>
 </html>

@@ -1,6 +1,12 @@
-<img ng-src="{{shot.thumbnail}}"
+<div style="position: relative;">
+<img ng-src="{{shotCtrl.getImageUrl(shot)}}"
      ng-click="shotCtrl.goToShot(shot.id)"
-     width="250" alt="Shot thumbnail">
+     ng-mouseover="shotCtrl.setHovered(shot)"
+     ng-mouseleave="shotCtrl.setNotHovered(shot)"
+     width="250" alt="Shot thumbnail"
+     class="shot">
 
+<i ng-if="shot.avatar_content_type == 'image/gif'" class="material-icons md-48">gif</i>
+</div>
 <br>
 <h5>{{shot.id}} - {{shot.title}}</h5>
