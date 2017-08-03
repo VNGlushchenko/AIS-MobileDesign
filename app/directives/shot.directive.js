@@ -25,7 +25,7 @@
 
                     this.getImageUrl = function(shot) {
                         if (shot.hovered == true && shot.avatar_content_type == 'image/gif') {
-                            return shot.preloadGif;
+                            return shot.avatar;
                         } else {
                             return shot.thumbnail;
                         }
