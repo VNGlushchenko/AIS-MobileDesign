@@ -1,12 +1,12 @@
 <div style="position: relative;">
-<img ng-src="{{shotCtrl.getImageUrl(shot)}}"
-     ng-click="shotCtrl.goToShot(shot.id)"
-     ng-mouseover="shotCtrl.setHovered(shot)"
-     ng-mouseleave="shotCtrl.setNotHovered(shot)"
+<img ng-src="{{shotCtrl.getImageUrl(shotCtrl.shot)}}"
+     ng-click="shotCtrl.goToShot(shotCtrl.shot.id)"
+     ng-mouseover="shotCtrl.setHovered(shotCtrl.shot)"
+     ng-mouseleave="shotCtrl.setNotHovered(shotCtrl.shot)"
      width="280" alt="Shot thumbnail"
      class="shot">
 
-<i ng-if="shot.avatar_content_type == 'image/gif'" class="material-icons md-48">gif</i>
+<i ng-if="shotCtrl.shot.avatar_content_type == 'image/gif'" class="material-icons md-48">gif</i>
 </div>
 <br>
-<h5 class="text-center">{{shot.id}} - {{shot.title}}</h5>
+<h5 class="text-center">{{shotCtrl.shot.id}} - {{shotCtrl.shot.title}}</h5>
