@@ -4,9 +4,8 @@
 
     angular
         .module("app")
-        .directive("appShot", function () {
-            return {
-                scope: {
+        .component("appShot", {
+                bindings: {
                     shot: '<'
                 },
                 controller: ['$state', function ($state) {
@@ -32,9 +31,8 @@
                     }
                 }],
                 controllerAs: 'shotCtrl',
-                restrict: 'E',
-                templateUrl: "app/directives/app-shot.template.html"
+                templateUrl: "app/components/app-shot.template.html"
             }
-        })
+        )
 
 })();
