@@ -8,7 +8,7 @@
           return {
               restrict: 'E',
               transclude: true,
-              templateUrl: "app/directives/header.template.html"
+              templateUrl: "app/directives/app-header.template.html"
           }
       })
 

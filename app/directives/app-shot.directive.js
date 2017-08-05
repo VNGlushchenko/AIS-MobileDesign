@@ -33,7 +33,7 @@
                 }],
                 controllerAs: 'shotCtrl',
                 restrict: 'E',
-                templateUrl: "app/directives/shot.template.html"
+                templateUrl: "app/directives/app-shot.template.html"
             }
         })
 

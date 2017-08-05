@@ -7,7 +7,7 @@
       .directive("appPlatforms", function () {
           return {
               restrict: 'E',
-              templateUrl: "app/directives/platforms.template.html",
+              templateUrl: "app/directives/app-platforms.template.html",
               controller: ['PlatformsModel', function (PlatformsModel) {
                     this.model = PlatformsModel.getPlatforms.query();
                 }],
