@@ -23,19 +23,38 @@
          img.shot {
             border: 1px solid lightblue;
          }
+
+         [ng-cloak] .loader {
+             border: 16px solid #f3f3f3; /* Light grey */
+             border-top: 16px solid #3498db; /* Blue */
+             border-radius: 50%;
+             width: 120px;
+             height: 120px;
+             animation: spin 2s linear infinite;
+             position: absolute;
+             top: calc(50% - 60px);
+             left: calc(50% - 60px);
+         }
+
+         @keyframes spin {
+             0% { transform: rotate(0deg); }
+             100% { transform: rotate(360deg); }
+         }
+
       </style>
    </head>
-   <body ng-app="app" ng-strict-di>
-      <div class="container-fluid">
-         <app-header>
-            <div class="col-xs-2">
-               <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo">
+   <body ng-app="app" ng-strict-di ng-cloak>
+   <div class="loader"></div>
+      <div class="container-fluid" ng-cloak>
+         <app-header ng-cloak>
+            <div class="col-xs-2" ng-cloak>
+               <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo" ng-cloak>
             </div>
          </app-header>
-         <ui-view></ui-view>
-         <app-header>
+         <ui-view ng-cloak></ui-view>
+         <app-header ng-cloak>
             <div class="col-xs-2">
-               <a href="mailto:web@agilie.com">Contact us</a>
+               <a href="mailto:web@agilie.com" ng-cloak>Contact us</a>
             </div>
          </app-header>
       </div>
