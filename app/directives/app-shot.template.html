@@ -10,3 +10,8 @@
 </div>
 <br>
 <h5 class="text-center">{{shot.id}} - {{shot.title}}</h5>
+<!-- Preloading -->
+<div ng-if="shot.avatar_content_type == 'image/gif'" 
+     style="display: none; position: absolute">
+    <img ng-src="{{shot.avatar}}">
+</div>
