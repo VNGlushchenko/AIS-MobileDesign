@@ -12,7 +12,8 @@
         let vm = this;
 
         vm.model = {
-            collections: []
+            collections: [],
+            isCollections: true
         };
 
         activate();

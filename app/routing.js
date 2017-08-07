@@ -21,8 +21,8 @@
                     controllerAs: 'cc',
                     templateUrl: 'app/collections/collections.html'
                 })
-                .state('collectionShots', {
-                    url: '/collections/:id/shots',
+                .state('collections.shots', {
+                    url: '/:id/shots',
                     controller: 'CollectionShotsController',
                     controllerAs: 'csc',
                     templateUrl: 'app/collections/collection.shots.html'
@@ -32,6 +32,12 @@
                     controller: 'ShotController',
                     controllerAs: 'sc',
                     templateUrl: 'app/shots/shot.html'
+                })
+                .state('createShot', {
+                    url: '/createShot',
+                    controller: 'CreateShotController',
+                    controllerAs: 'crsc',
+                    templateUrl: '<div></div>'
                 });
         }]);
 })();

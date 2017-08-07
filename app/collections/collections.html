@@ -1,7 +1,7 @@
-<div class="row" style="margin-top: 100px;" ng-cloak>
+<div class="row" style="margin-top: 100px;" ng-cloak ng-show="cc.model.isCollections">
 	<div style="display: inline-block; padding: 10px;" ng-repeat="collection in cc.model.collections" class="col-sm-3 col-sm-offset-2 curpointer" ng-cloak>
 	    <img ng-src="{{collection.avatar}}"
-	         ui-sref="collectionShots({id: collection.id})"
+	         ui-sref="collections.shots({id: collection.id})"
 	         width="200" ng-attr-alt="{{collection.title}}"
 	         ng-cloak>
 	    <br>
@@ -11,3 +11,4 @@
 
 	</div>
 </div>
+<ui-view ng-cloak></ui-view>
