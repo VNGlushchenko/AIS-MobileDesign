@@ -22,6 +22,7 @@
                 template: 'app/feedback/feedback.template.html',
                 className: 'ngdialog-theme-default',
                 width: '600px',
+                height: '400px',
                 controller: 'InnerFeedbackController',
                 controllerAs: 'ifc',
                 preCloseCallback: function() {

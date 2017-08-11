@@ -1,4 +1,5 @@
-;(function() {
+;
+(function() {
 
     "use strict";
 
@@ -19,7 +20,12 @@
                     url: '/collections',
                     controller: 'CollectionsController',
                     controllerAs: 'cc',
-                    templateUrl: 'app/collections/collections.html'
+                    templateUrl: 'app/collections/collections.html',
+                    resolve: {
+                        checkUserAuthData: ['UserModel', function(UserModel) {
+                            return UserModel.checkUserAuthData();
+                        }]
+                    }
                 })
                 .state('collections.shots', {
                     url: '/:id/shots',
@@ -34,10 +40,19 @@
                     templateUrl: 'app/shots/shot.html'
                 })
                 .state('createShot', {
-                    url: '/createShot',
+                    url: '/create_shot',
                     controller: 'CreateShotController',
                     controllerAs: 'crsc',
-                    templateUrl: '<div></div>'
+                    templateUrl: 'app/shots/create_shot.template.html',
+                    resolve: {
+                        checkUserAuthData: ['UserModel', function(UserModel) {
+                            return UserModel.checkUserAuthData();
+                        }]
+                    }
+                })
+                .state('signIn', {
+                    url: '/sign_in',
+                    component: 'appSignin'
                 });
         }]);
 })();

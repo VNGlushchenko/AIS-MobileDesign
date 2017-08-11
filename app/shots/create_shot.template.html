@@ -1,0 +1,85 @@
+<div class="row" ng-cloak>
+    <div class="col-sm-offset-1 col-sm-10">
+        <h3>Please, fill out form fields for creation of a new shot.</h3>
+    </div>
+    <div class="col-sm-offset-1 col-sm-10 well">
+        <form class="form-horizontal" name="shotForm" novalidate ng-submit="crsc.menu.createShot()">
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="title" class="col-sm-4 control-label">Title of new shot:</label>
+                <div class="col-sm-8">
+                    <input type="text" style="width:300px;" ng-model="crsc.model.shot.title" name="title" id="title" required>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="portfolio" class="col-sm-4 control-label">Is this shot for portfolio?</label>
+                <div class="col-sm-8">
+                    <select id="portfolio" name="portfolio" ng-model="crsc.model.shot.portfolio">
+			          <option ng-value="false">No</option>
+			          <option ng-value="true">Yes</option>
+			        </select>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="inspiration" class="col-sm-4 control-label">Is this shot for inspiration?</label>
+                <div class="col-sm-8">
+                    <select id="inspiration" name="inspiration" ng-model="crsc.model.shot.inspiration">
+			          <option ng-value="false">No</option>
+			          <option ng-value="true">Yes</option>
+			        </select>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="author" class="col-sm-4 control-label">Author of new shot:</label>
+                <div class="col-sm-8">
+                    <input type="text" style="width:300px;" ng-model="crsc.model.shot.author" name="author" id="author" required>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="description" class="col-sm-4 control-label">Description of new shot:</label>
+                <div class="col-sm-8">
+                    <input type="text" style="width:300px;" ng-model="crsc.model.shot.description" name="description" id="description">
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="link" class="col-sm-4 control-label">Link for new shot:</label>
+                <div class="col-sm-8">
+                    <input type="text" style="width:300px;" ng-model="crsc.model.shot.link" name="link" id="link">
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="avatar" class="col-sm-4 control-label">Avatar for new shot:</label>
+                <div class="col-sm-8">
+                    <input type="text" style="width:300px;" ng-model="crsc.model.shot.avatar" name="avatar" id="avatar" required>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="platform_ids" class="col-sm-4 control-label">List of IDs of platforms for new shot:</label>
+                <div class="col-sm-8">
+                    <textarea style="width:300px; height:100px;" name="platform_ids" maxlength="1000" width="800px" id="platform_ids" placeholder="Provide multiple values in new lines (at least one required)." required></textarea>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="tags" class="col-sm-4 control-label">List of of tags for new shot:</label>
+                <div class="col-sm-8">
+                    <textarea style="width:300px; height:100px;" name="tags" maxlength="1000" width="800px" id="tags" placeholder="Provide multiple values in new lines." required></textarea>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group ">
+                <div class="col-sm-offset-4 col-sm-8 ">
+                    <button type="submit " class="btn btn-info ">Submit</button>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+        </form>
+    </div>
+</div>

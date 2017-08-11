@@ -1,0 +1,30 @@
+<div class="row" ng-cloak>
+    <div class="col-sm-offset-1 col-sm-10">
+        <h3>Please, fill out form fields to sign in.</h3>
+    </div>
+    <div class="col-sm-offset-1 col-sm-10 well">
+        <form class="form-horizontal" name="signinForm" novalidate ng-submit="$ctrl.menu.authUser.signIn($ctrl.model)">
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="email" class="col-sm-4 control-label">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" style="width:300px;" ng-model="$ctrl.model.email" name="email" id="email" required>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group">
+                <label for="password" class="col-sm-4 control-label">Password:</label>
+                <div class="col-sm-8">
+                    <input type="password" style="width:300px;" ng-model="$ctrl.model.password" name="password" id="password" required>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+            <div class="form-group ">
+                <div class="col-sm-offset-4 col-sm-8 ">
+                    <button type="submit " class="btn btn-info ">Submit</button>
+                </div>
+            </div>
+            <!--____________________________________________________________________________________-->
+        </form>
+    </div>
+</div>

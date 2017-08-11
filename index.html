@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <base href="/">
-      <meta charset="UTF-8">
-      <title>Mobile Design</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css" integrity="sha256-ez2qe0qzAftORrn20vwIkez4lq8ZsXRHqbmRfysqzZA=" crossorigin="anonymous" />
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <style type="text/css">
-         .curpointer {
-         cursor: pointer;
-         }
-         .material-icons.md-48 {
-          position: absolute;
-          right: 2px;
-          bottom: 2px;
-          background-color: white;
-         }
 
-         img.shot {
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Mobile Design</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css" integrity="sha256-FF72Wdg9iHjeiA/uA7G3D0IpkL2QSAUTy+X4A+OwY3M=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css" integrity="sha256-ez2qe0qzAftORrn20vwIkez4lq8ZsXRHqbmRfysqzZA=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style type="text/css">
+        .curpointer {
+            cursor: pointer;
+        }
+        
+        .material-icons.md-48 {
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+            background-color: white;
+        }
+        
+        img.shot {
             border: 1px solid lightblue;
-         }
+        }
+        
+        [ng-cloak] .loader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: absolute;
+            top: calc(50% - 60px);
+            left: calc(50% - 60px);
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
 
-         [ng-cloak] .loader {
-             border: 16px solid #f3f3f3; /* Light grey */
-             border-top: 16px solid #3498db; /* Blue */
-             border-radius: 50%;
-             width: 120px;
-             height: 120px;
-             animation: spin 2s linear infinite;
-             position: absolute;
-             top: calc(50% - 60px);
-             left: calc(50% - 60px);
-         }
-
-         @keyframes spin {
-             0% { transform: rotate(0deg); }
-             100% { transform: rotate(360deg); }
-         }
-
-      </style>
-   </head>
-   <body ng-app="app" ng-strict-di ng-cloak>
-   <div class="loader"></div>
-      <div class="container-fluid" ng-cloak>
-         <app-header ng-cloak>
-            <div class="col-xs-2" ng-cloak>
-               <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo" ng-cloak>
+<body ng-app="app" ng-strict-di ng-cloak>
+    <div class="loader"></div>
+    <div class="container-fluid" ng-cloak>
+        <app-header ng-cloak>
+            <div class="col-sm-2" ng-cloak>
+                <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo" ng-cloak>
             </div>
-         </app-header>
-         <ui-view ng-cloak></ui-view>
-         <app-header ng-cloak>
-            <div class="col-xs-2">
-               <a href="mailto:web@agilie.com" ng-cloak>Contact us</a>
+        </app-header>
+        <ui-view ng-cloak></ui-view>
+        <app-header ng-cloak>
+            <div class="col-sm-2">
+                <a href="mailto:web@agilie.com" ng-cloak>Contact us</a>
             </div>
-         </app-header>
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js" integrity="sha256-yzIzyPxO1aQpJzFMpDk86/0gpmmSoXozhAH9ImwnrBg=" crossorigin="anonymous"></script>
-      <script src="app/core.module.js"></script>
-      <script src="app/routing.js"></script>
-      <script src="app/models/shots.model.js"></script>
-      <script src="app/models/collections.model.js"></script>
-      <script src="app/models/feedback.model.js"></script>
-      <script src="app/models/platforms.model.js"></script>
-      <script src="app/dashboard/dashboard.controller.js"></script>
-      <script src="app/shots/shot.controller.js"></script>
-      <script src="app/collections/collections.controller.js"></script>
-      <script src="app/collections/collection.shots.controller.js"></script>
-      <script src="app/feedback/main.feedback.controller.js"></script>
-      <script src="app/feedback/inner.feedback.controller.js"></script>
-      <script src="app/components/app-header.component.js"></script>
-      <script src="app/components/app-shot.component.js"></script>
-      <script src="app/components/app-platforms.component.js"></script>
-   </body>
+        </app-header>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js" integrity="sha256-yzIzyPxO1aQpJzFMpDk86/0gpmmSoXozhAH9ImwnrBg=" crossorigin="anonymous"></script>
+    <script src="app/core.module.js"></script>
+    <script src="app/models/shots.model.js"></script>
+    <script src="app/models/create_shot.model.js"></script>
+    <script src="app/models/collections.model.js"></script>
+    <script src="app/models/feedback.model.js"></script>
+    <script src="app/models/platforms.model.js"></script>
+    <script src="app/models/user.model.js"></script>
+    <script src="app/routing.js"></script>
+    <script src="app/dashboard/dashboard.controller.js"></script>
+    <script src="app/shots/shot.controller.js"></script>
+    <script src="app/shots/create_shot.controller.js"></script>
+    <script src="app/collections/collections.controller.js"></script>
+    <script src="app/collections/collection.shots.controller.js"></script>
+    <script src="app/feedback/main.feedback.controller.js"></script>
+    <script src="app/feedback/inner.feedback.controller.js"></script>
+    <script src="app/components/app-header.component.js"></script>
+    <script src="app/components/app-shot.component.js"></script>
+    <script src="app/components/app-platforms.component.js"></script>
+    <script src="app/components/app-signin.component.js"></script>
+</body>
+
 </html>

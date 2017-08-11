@@ -1,4 +1,5 @@
-;(function() {
+;
+(function() {
 
     "use strict";
 
@@ -6,7 +7,7 @@
         .module("app")
         .controller("InnerFeedbackController", InnerFeedbackController);
 
-    InnerFeedbackController.$inject = ['FeedbackModel','$timeout','ngDialog'];
+    InnerFeedbackController.$inject = ['FeedbackModel', '$timeout', 'ngDialog'];
 
     function InnerFeedbackController(FeedbackModel, $timeout, ngDialog) {
 
@@ -30,7 +31,7 @@
 
         function submit() {
             FeedbackModel.sendFeedback.save(vm.model.feedback).$promise.then(
-            
+
                 response => {
                     FeedbackModel.setFeedbackSuccess(true);
                     vm.model.success = true;
@@ -41,10 +42,7 @@
                 response => {
                     vm.model.error = true;
                 }
-
-            );
+            )
         }
-
     }
-
 })();
