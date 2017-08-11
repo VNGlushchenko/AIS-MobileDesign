@@ -1,4 +1,5 @@
-;(function () {
+;
+(function() {
 
     "use strict";
 
@@ -6,9 +7,9 @@
         .module("app")
         .controller("CreateShotController", CreateShotController);
 
-    CreateShotController.$inject = ['CreateShotModel'];
+    CreateShotController.$inject = ['$scope', 'CreateShotModel'];
 
-    function CreateShotController(CreateShotModel) {
+    function CreateShotController($scope, CreateShotModel) {
         let vm = this;
 
         vm.model = {
@@ -38,11 +39,11 @@
         }
 
         function createPlatformIdsArray() {
-            vm.model.shot.platform_ids = shotForm.platform_ids.value.split(/(?:\s)+/g);
+            vm.model.shot.platform_ids = vm.shotForm.platform_ids.$modelValue.split(/(?:\s)+/g);
         }
 
         function createTagsArray() {
-            vm.model.tags = shotForm.tags.value.split(/(?:\s)+/g);
+            vm.model.tags = vm.shotForm.tags.$modelValue.split(/(?:\s)+/g);
         }
 
     }

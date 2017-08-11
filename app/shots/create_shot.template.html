@@ -3,7 +3,7 @@
         <h3>Please, fill out form fields for creation of a new shot.</h3>
     </div>
     <div class="col-sm-offset-1 col-sm-10 well">
-        <form class="form-horizontal" name="shotForm" novalidate ng-submit="crsc.menu.createShot()">
+        <form class="form-horizontal" name="crsc.shotForm" novalidate ng-submit="crsc.menu.createShot()">
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="title" class="col-sm-4 control-label">Title of new shot:</label>
@@ -63,14 +63,14 @@
             <div class="form-group">
                 <label for="platform_ids" class="col-sm-4 control-label">List of IDs of platforms for new shot:</label>
                 <div class="col-sm-8">
-                    <textarea style="width:300px; height:100px;" name="platform_ids" maxlength="1000" width="800px" id="platform_ids" placeholder="Provide multiple values in new lines (at least one required)." required></textarea>
+                    <textarea style="width:300px; height:100px;" ng-model="platform_ids" name="platform_ids" maxlength="1000" width="800px" id="platform_ids" placeholder="Provide multiple values in new lines (at least one required)." required></textarea>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="tags" class="col-sm-4 control-label">List of of tags for new shot:</label>
                 <div class="col-sm-8">
-                    <textarea style="width:300px; height:100px;" name="tags" maxlength="1000" width="800px" id="tags" placeholder="Provide multiple values in new lines." required></textarea>
+                    <textarea style="width:300px; height:100px;" ng-model="tags" name="tags" maxlength="1000" width="800px" id="tags" placeholder="Provide multiple values in new lines." required></textarea>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
