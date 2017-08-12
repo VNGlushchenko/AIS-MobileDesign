@@ -39,7 +39,8 @@
                     controller: 'CollectionShotsController',
                     controllerAs: 'csc',
                     templateUrl: 'app/collections/collection.shots.html'
-                }).state('shot', {
+                })
+                .state('shot', {
                     url: '/shots/:id',
                     controller: 'ShotController',
                     controllerAs: 'sc',
