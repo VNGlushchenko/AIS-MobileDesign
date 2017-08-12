@@ -1,18 +1,12 @@
 <div style="position: relative;" ng-cloak>
-<img ng-src="{{shotCtrl.getImageUrl(shotCtrl.shot)}}"
-     ng-click="shotCtrl.goToShot(shotCtrl.shot.id)"
-     ng-mouseover="shotCtrl.setHovered(shotCtrl.shot)"
-     ng-mouseleave="shotCtrl.setNotHovered(shotCtrl.shot)"
-     width="280" alt="Shot thumbnail"
-     class="shot"
-     ng-cloak>
+    <img ng-src="{{shotCtrl.getImageUrl(shotCtrl.shot)}}" ng-click="shotCtrl.goToShot(shotCtrl.shot.id)" ng-mouseover="shotCtrl.setHovered(shotCtrl.shot)" ng-mouseleave="shotCtrl.setNotHovered(shotCtrl.shot)" width="200" alt="Shot thumbnail" class="shot"
+        ng-cloak>
 
-<i ng-if="shotCtrl.shot.avatar_content_type == 'image/gif'" class="material-icons md-48">gif</i>
+    <i ng-if="shotCtrl.shot.avatar_content_type == 'image/gif'" class="material-icons md-48">gif</i>
 </div>
 <br>
 <h5 class="text-center" ng-cloak>{{shotCtrl.shot.id}} - {{shotCtrl.shot.title}}</h5>
 <!-- Preloading -->
-<div ng-if="shotCtrl.shot.avatar_content_type == 'image/gif'" 
-     style="display: none; position: absolute">
+<div ng-if="shotCtrl.shot.avatar_content_type == 'image/gif'" style="display: none; position: absolute">
     <img ng-src="{{shotCtrl.shot.avatar}}">
 </div>

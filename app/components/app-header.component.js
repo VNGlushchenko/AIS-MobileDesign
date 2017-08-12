@@ -1,13 +1,13 @@
-;(function(){
+;
+(function() {
 
-  "use strict";
+    "use strict";
 
-  angular
-      .module("app")
-      .component("appHeader", {
-              transclude: true,
-              templateUrl: "app/components/app-header.template.html"
-          }
-      )
+    angular
+        .module("app")
+        .component("appHeader", {
+            transclude: true,
+            templateUrl: "app/components/app-header.template.html"
+        })
 
 })();

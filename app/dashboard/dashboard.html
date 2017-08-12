@@ -1,6 +1,8 @@
 <div>
-   <app-platforms></app-platforms>
-   <div style="display: inline-block; padding: 20px;" ng-repeat="shot in dc.model.shots" class="curpointer">
-      <app-shot shot="shot"></app-shot>
-   </div>
+    <app-platforms></app-platforms>
+    <div owl-carousel class="owl-carousel owl-theme" params="{items: 3, nav: true, loop: true}">
+        <div owl-carousel-item style="display: inline-block; padding: 20px;" ng-repeat="shot in dc.model.shots" class="curpointer owl-item">
+            <app-shot shot="shot"></app-shot>
+        </div>
+    </div>
 </div>
