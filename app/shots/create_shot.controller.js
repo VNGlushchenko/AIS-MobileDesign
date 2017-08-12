@@ -7,9 +7,9 @@
         .module("app")
         .controller("CreateShotController", CreateShotController);
 
-    CreateShotController.$inject = ['$scope', 'CreateShotModel'];
+    CreateShotController.$inject = ['CreateShotModel'];
 
-    function CreateShotController($scope, CreateShotModel) {
+    function CreateShotController(CreateShotModel) {
         let vm = this;
 
         vm.model = {

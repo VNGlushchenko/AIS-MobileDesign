@@ -7,9 +7,9 @@
         .module("app")
         .factory("UserModel", UserModel);
 
-    UserModel.$inject = ['$resource', '$state', 'toastr', '$timeout'];
+    UserModel.$inject = ['$resource', '$state', 'toastr'];
 
-    function UserModel($resource, $state, toastr, $timeout) {
+    function UserModel($resource, $state, toastr) {
         let vm = this;
 
         vm.model = {
@@ -51,14 +51,7 @@
         function checkUserAuthData() {
             return $resource('http://dev-api.mobile.design/api/users').query().$promise.then(
                 response => {},
-                response => {
-                    toastr.warning('For authorized users only', 'Warning');
-                    $timeout(redirect, 3000);
-
-                    function redirect() {
-                        return $state.go('signIn');
-                    }
-                }
+                response => toastr.warning('For authorized users only', 'Warning')
             )
         }
 
