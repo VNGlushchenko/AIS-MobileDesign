@@ -20,20 +20,26 @@
                     url: '/collections',
                     controller: 'CollectionsController',
                     controllerAs: 'cc',
-                    templateUrl: 'app/collections/collections.html',
-                    resolve: {
-                        checkUserAuthData: ['UserModel', function(UserModel) {
-                            return UserModel.checkUserAuthData();
-                        }]
-                    }
+                    templateUrl: 'app/collections/collections.html'
+                        /* ,
+                        resolve: {
+                            checkUserAuthData: ['UserModel', function(UserModel) {
+                                return UserModel.checkUserAuthData();
+                            }]
+                        } */
                 })
-                .state('collections.shots', {
+                /* .state('collections.shots', {
                     url: '/:id/shots',
                     controller: 'CollectionShotsController',
                     controllerAs: 'csc',
                     templateUrl: 'app/collections/collection.shots.html'
-                })
-                .state('shot', {
+                }) */
+                .state('collectionShots', {
+                    url: '/collections/:id/shots',
+                    controller: 'CollectionShotsController',
+                    controllerAs: 'csc',
+                    templateUrl: 'app/collections/collection.shots.html'
+                }).state('shot', {
                     url: '/shots/:id',
                     controller: 'ShotController',
                     controllerAs: 'sc',

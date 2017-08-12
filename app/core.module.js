@@ -2,18 +2,16 @@
 (function() {
     "use strict";
 
-    angular.module("app", ['ui.router', 'ngResource', 'ngDialog', 'toastr'])
-        /* .config(['toastrConfig', '$timeout', '$state', function(toastrConfig, $timeout, $state) {
+    angular.module("app", ['ui.router', 'ngResource', 'ngDialog', 'ngMessages', 'toastr'])
+        .run(['toastrConfig', '$rootScope', function(toastrConfig, $rootScope) {
             angular.extend(toastrConfig, {
+                closeButton: true,
                 onHidden: function(isHiddenByClick, toast) {
-                    $timeout(redirect, 2000);
-
-                    function redirect() {
-                        $state.go('signIn')
+                    if (toast.scope.message == "For authorized users only") {
+                        $rootScope.$emit('authToastrClosed');
                     }
                 }
             });
-        }]) */
-    ;
+        }]);
 
 })();

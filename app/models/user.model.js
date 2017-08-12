@@ -7,9 +7,9 @@
         .module("app")
         .factory("UserModel", UserModel);
 
-    UserModel.$inject = ['$resource', '$state', 'toastr', '$q', '$timeout'];
+    UserModel.$inject = ['$resource', '$state', 'toastr', '$q', '$timeout', '$rootScope'];
 
-    function UserModel($resource, $state, toastr, $q, $timeout) {
+    function UserModel($resource, $state, toastr, $q, $timeout, $rootScope) {
         let vm = this;
 
         vm.model = {
@@ -50,23 +50,29 @@
 
         function checkUserAuthData() {
             return $resource('http://dev-api.mobile.design/api/users').query().$promise.then(
-                    response => {},
-                    response => {
-                        toastr.warning('For authorized users only', 'Warning');
-                        $state.go('signIn'); // закомментить эту строку, раскомментить все, что ниже
-                        // $q.reject();
-                    }
-                )
-                /* .then(
-                                null,
-                                () => {
-                                    $timeout(redirect, 2000);
+                response => {},
+                response => {
+                    /*  
+                    -- Another method instead of mentioned below ('ms'-parameter in $timeout can be adjustable with toast showing time and less than one).
+                    -- There is no need the onHidden event in app.run(), but it needs to add 'tapToDismiss: true' instead.
+                    --------------------------------------------------------------------------------------------------------------------------------------
+                        toastr.error('For authorized users only', 'Warning');
+                        return $timeout(function() {
+                            $state.go('signIn');
+                        }, 6000).then(() => $q.reject());
+                     */
 
-                                    function redirect() {
-                                        $state.go('signIn');
-                                    }
-                                }
-                            ); */
+                    toastr.error('For authorized users only', 'Warning');
+                    let defer = $q.defer();
+
+                    $rootScope.$on('authToastrClosed', () => {
+                        $timeout(function() { $state.go('signIn') }, 500);
+                        defer.reject();
+                    });
+
+                    return defer.promise;
+                }
+            )
         }
 
         function redirectAfterAuth(param) {
