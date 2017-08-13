@@ -12,6 +12,28 @@
                     }
                 }
             });
-        }]);
+        }])
+        .config(['$resourceProvider', '$httpProvider', function($resourceProvider, $httpProvider) {
+            $resourceProvider.defaults.actions.saveWithHeaders = {
+                method: 'POST',
+                transformResponse: function(data, headers) {
+                    return {
+                        data: JSON.parse(data)['data'],
+                        headers: headers()
+                    }
+                }
+            };
 
+            $httpProvider.interceptors.push('userCredential');
+        }])
+        .factory('userCredential', ['UserModel', function(UserModel) {
+            return {
+                request: function(config) {
+                    let userAuthData = UserModel.getUserAuthData();
+                    config.headers = userAuthData;
+                    //console.log('config headers: ', config.headers);
+                    return config;
+                }
+            }
+        }]);
 })();
