@@ -60,6 +60,10 @@
                 .state('signIn', {
                     url: '/sign_in',
                     component: 'appSignin'
+                })
+                .state('signUp', {
+                    url: '/sign_up',
+                    component: 'appSignup'
                 });
         }]);
 })();

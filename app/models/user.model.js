@@ -32,14 +32,15 @@
 
         function signUp(enteringData) {
             return $resource('http://dev-api.mobile.design/api/auth').save(enteringData).$promise.then(
-                response => redirectAfterAuth(response)
+                response => redirectAfterAuth(response),
+                response => console.log(response)
             );
         }
 
         function signIn(enteringData) {
             return $resource('http://dev-api.mobile.design/api/auth/sign_in').save(enteringData).$promise.then(
                 response => redirectAfterAuth(response),
-                response => $state.go('signUp')
+                response => console.log(response) //$state.go('signUp')
             );
         }
 
@@ -81,12 +82,13 @@
         }
 
         function setUserAuthData(param) {
-            let headers = param.config.headers;
+            console.log(param);
+            /* let headers = param.config.headers;
             vm.model.user.accesstoken = headers.accesstoken;
             vm.model.user.client = headers.client;
             vm.model.user.expiry = headers.expiry;
             vm.model.user.uid = headers.uid;
-            vm.model.user.tokentype = headers.tokentype;
+            vm.model.user.tokentype = headers.tokentype; */
         }
 
         return vm.menu;
