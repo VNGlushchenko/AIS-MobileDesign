@@ -19,7 +19,8 @@
                 expiry: '',
                 uid: '',
                 tokentype: ''
-            }
+            },
+            isUserAuthKeysEmpty: true
         };
 
         vm.menu = {
@@ -49,11 +50,12 @@
 
         function logOut() {
             vm.model.user = {};
+            vm.model.isUserAuthKeysEmpty = true;
             $state.go('signIn');
         }
 
         function checkUserAuthData() {
-            return $resource('http://dev-api.mobile.design/api/users').query().$promise.then(
+            return $resource('http://dev-api.mobile.design/api/users').get().$promise.then(
                 response => {},
                 response => {
                     /*  
@@ -86,11 +88,11 @@
             vm.model.user.expiry = headers.expiry;
             vm.model.user.uid = headers.uid;
             vm.model.user.tokentype = headers.tokentype;
-            console.log(vm.model.user);
+            vm.model.isUserAuthKeysEmpty = false;
         }
 
         function getUserAuthData() {
-            return vm.model.user;
+            return vm.model;
         }
 
         function redirectAfterAuth(param) {

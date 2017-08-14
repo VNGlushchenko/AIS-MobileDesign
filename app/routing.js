@@ -64,6 +64,10 @@
                 .state('signUp', {
                     url: '/sign_up',
                     component: 'appSignup'
+                })
+                .state('logOut', {
+                    url: '/log_out',
+                    component: 'appLogout'
                 });
         }]);
 })();

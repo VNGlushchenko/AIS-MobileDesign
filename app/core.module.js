@@ -26,12 +26,14 @@
 
             $httpProvider.interceptors.push('userCredential');
         }])
-        .factory('userCredential', ['UserModel', function(UserModel) {
+        .factory('userCredential', ['$injector', function($injector) {
             return {
                 request: function(config) {
-                    let userAuthData = UserModel.getUserAuthData();
-                    config.headers = userAuthData;
-                    //console.log('config headers: ', config.headers);
+                    let userAuthData = $injector.get('UserModel').getUserAuthData();
+                    if (!userAuthData.isUserAuthKeysEmpty) {
+                        config.headers = userAuthData.user;
+                    }
+                    console.log('url: ' + config.url + ' | method: ' + config.method + ' | headers: ', config.headers);
                     return config;
                 }
             }
