@@ -9,10 +9,10 @@
             require: {
                 parent: '^appHeader'
             },
-            templateUrl: '',
+            templateUrl: "app/components/app-logout.template.html",
             controller: function() {
                 this.$onInit = function() {
-                    parent.user.logOut();
+                    this.parent.user.logOut();
                 };
             }
         })
