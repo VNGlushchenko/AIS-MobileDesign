@@ -28,11 +28,13 @@
             signIn: signIn,
             logOut: logOut,
             checkUserAuthData: checkUserAuthData,
-            setUserAuthData: setUserAuthData,
-            getUserAuthData: getUserAuthData
+            setUserAuthData: setUserAuthData
         };
 
-        return vm.menu;
+        return {
+            menu: vm.menu,
+            model: vm.model
+        }
 
         function signUp(enteringData) {
             return $resource('http://dev-api.mobile.design/api/auth').saveWithHeaders(enteringData).$promise.then(
@@ -89,10 +91,6 @@
             vm.model.user.uid = headers.uid;
             vm.model.user.tokentype = headers.tokentype;
             vm.model.isUserAuthKeysEmpty = false;
-        }
-
-        function getUserAuthData() {
-            return vm.model;
         }
 
         function redirectAfterAuth(param) {

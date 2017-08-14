@@ -12,11 +12,13 @@
     <div class="col-sm-2  text-center">
         <a ui-sref="createShot">CREATE SHOT</a>
     </div>
-    <div class="col-sm-1  text-center" ng-if="$ctrl.user.isUserAuthKeysEmpty">
+    <div class="col-sm-1  text-center" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
         <a ui-sref="signUp">SIGN UP</a>
     </div>
-    <div class="col-sm-1  text-center" ng-if="$ctrl.user.isUserAuthKeysEmpty">
+    <div class="col-sm-1  text-center" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
         <a ui-sref="signIn">SIGN IN</a>
     </div>
-    <app-logout></app-logout>
+    <div class="col-sm-2  text-center" ng-if="!$ctrl.user.model.isUserAuthKeysEmpty">
+        <a ui-sref="logOut">LOG OUT</a>
+    </div>
 </div>

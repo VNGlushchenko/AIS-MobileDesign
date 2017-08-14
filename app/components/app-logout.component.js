@@ -6,14 +6,15 @@
     angular
         .module("app")
         .component("appLogout", {
-            require: {
+            /* require: {
                 parent: '^appHeader'
-            },
-            templateUrl: "app/components/app-logout.template.html",
-            controller: function() {
-                this.$onInit = function() {
-                    this.parent.user.logOut();
-                };
-            }
+            }, */
+            templateUrl: "app/components/app-logout.template.html"
+                /*,
+                             controller: function() {
+                                this.$onInit = function() {
+                                    this.parent.user.logOut();
+                                };
+                            } */
         })
 })();
