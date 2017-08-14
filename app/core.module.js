@@ -29,7 +29,7 @@
         .factory('userCredential', ['$injector', function($injector) {
             return {
                 request: function(config) {
-                    let userAuthData = $injector.get('UserModel').getUserAuthData();
+                    let userAuthData = $injector.get('UserModel').model;
                     if (!userAuthData.isUserAuthKeysEmpty) {
                         config.headers = userAuthData.user;
                     }

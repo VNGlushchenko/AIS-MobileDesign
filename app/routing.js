@@ -53,7 +53,7 @@
                     templateUrl: 'app/shots/create_shot.template.html',
                     resolve: {
                         checkUserAuthData: ['UserModel', function(UserModel) {
-                            return UserModel.checkUserAuthData();
+                            return UserModel.menu.checkUserAuthData();
                         }]
                     }
                 })
@@ -64,10 +64,6 @@
                 .state('signUp', {
                     url: '/sign_up',
                     component: 'appSignup'
-                })
-                .state('logOut', {
-                    url: '/log_out',
-                    component: 'appLogout'
                 });
         }]);
 })();

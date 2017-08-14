@@ -9,17 +9,16 @@
             return {
                 restrict: 'A',
                 scope: {
-                    checking_password: '<checkingPassword'
+                    checking_password: '=checkingPassword'
                 },
                 require: 'ngModel',
                 link: function(scope, elem, attrs, ctrl) {
                     ctrl.$validators.check_password_confirmation = function(modelValue, viewValue) {
-                        if (modelValue == scope.checking_password) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                        return modelValue == scope.checking_password;
                     };
+                    scope.$watch("checking_password", function() {
+                        ctrl.$validate();
+                    });
                 }
             }
         })

@@ -1,24 +1,24 @@
 <div class="row" style="background-color: lightblue; font-size: 1.3em;" ng-cloak>
     <ng-transclude ng-cloak></ng-transclude>
-    <div class="col-sm-2 text-center">
+    <div class="col-sm-2 text-center menu-item">
         <a ui-sref="dashboard">DASHBOARD</a>
     </div>
-    <div class="col-sm-2  text-center">
+    <div class="col-sm-2  text-center menu-item">
         <a ui-sref="collections">COLLECTIONS</a>
     </div>
-    <div class="col-sm-2  text-center" ng-controller="MainFeedbackController as mfc">
+    <div class="col-sm-2  text-center menu-item" ng-controller="MainFeedbackController as mfc">
         <a ng-href="" class="curpointer" ng-click="mfc.menu.openFeedbackForm()">FEEDBACK</a>
     </div>
-    <div class="col-sm-2  text-center">
+    <div class="col-sm-2  text-center menu-item">
         <a ui-sref="createShot">CREATE SHOT</a>
     </div>
-    <div class="col-sm-1  text-center" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
-        <a ui-sref="signUp">SIGN UP</a>
+    <div class="col-sm-1  text-center menu-item-btn" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
+        <a ui-sref="signUp" class="btn btn-info">SIGN UP</a>
     </div>
-    <div class="col-sm-1  text-center" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
-        <a ui-sref="signIn">SIGN IN</a>
+    <div class="col-sm-1  text-center menu-item-btn" ng-if="$ctrl.user.model.isUserAuthKeysEmpty">
+        <a ui-sref="signIn" class="btn btn-info">SIGN IN</a>
     </div>
-    <div class="col-sm-2  text-center" ng-if="!$ctrl.user.model.isUserAuthKeysEmpty">
-        <a ui-sref="logOut">LOG OUT</a>
+    <div class="col-sm-2  text-right menu-item-btn" ng-if="!$ctrl.user.model.isUserAuthKeysEmpty">
+        <a href="#" class="btn btn-info" ng-click="$ctrl.user.menu.logOut()">LOG OUT</a>
     </div>
 </div>
