@@ -1,0 +1,22 @@
+{
+    "name": "ais-my-mobile-design",
+    "description": "training project",
+    "main": "index.js",
+    "authors": [
+        "Vladimir Glushchenko"
+    ],
+    "license": "ISC",
+    "keywords": [
+        "mobile",
+        "design"
+    ],
+    "homepage": "https://github.com/VNGlushchenko/AIS-MyMobileDesign#readme",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
