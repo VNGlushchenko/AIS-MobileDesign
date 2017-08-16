@@ -3,7 +3,7 @@
         <h3 class="text-center">Sign in</h3>
     </div>
     <div class="col-sm-offset-3 col-sm-6 well">
-        <form class="form-horizontal" name="signInForm" novalidate ng-submit="signInForm.$valid && $ctrl.menu.authUser.menu.signIn($ctrl.model)">
+        <form class="form-horizontal" name="signInForm" novalidate ng-submit="$ctrl.menu.authUser.menu.signIn($ctrl.model)">
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="email" class="col-sm-4 control-label">Email:</label>
@@ -11,8 +11,8 @@
                     <input type="email" style="width:300px;" ng-model="$ctrl.model.email" name="email" id="email" required>
                 </div>
                 <div ng-messages="signInForm.email.$error" class="col-sm-offset-4 col-sm-8">
+                    <div ng-message="required" class="required">Required field</div>
                     <div ng-message="email">This field must be a valid email address.</div>
-                    <!-- <div ng-message="required">Please, enter your email address.</div> -->
                 </div>
             </div>
 
@@ -23,13 +23,14 @@
                     <input type="password" style="width:300px;" ng-model="$ctrl.model.password" name="password" id="password" required>
                 </div>
                 <div ng-messages="signInForm.password.$error" class="col-sm-offset-4 col-sm-8">
-                    <!-- <div ng-message="required">Please, enter your password.</div> -->
+                    <div ng-message="required" class="required">Required field</div>
+                    <!-- <div ng-message="signInForm.$invalid">You have entered the wrong email address or the password</div> -->
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group ">
                 <div class="col-sm-offset-4 col-sm-8 ">
-                    <button type="submit " class="btn btn-info ">Submit</button>
+                    <button type="submit " class="btn btn-info" ng-disabled="signInForm.$invalid">Submit</button>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->

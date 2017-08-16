@@ -46,7 +46,10 @@
         function signIn(enteringData) {
             return $resource('http://dev-api.mobile.design/api/auth/sign_in').saveWithHeaders(enteringData).$promise.then(
                 response => redirectAfterAuth(response),
-                response => console.log(response) //$state.go('signUp')
+                response => {
+                    // signInForm.$invalid = true;
+                    console.log(response);
+                }
             );
         }
 

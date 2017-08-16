@@ -3,45 +3,46 @@
         <h3 class="text-center">Enter your data to sign up</h3>
     </div>
     <div class="col-sm-offset-3 col-sm-7 well">
-        <form class="form-horizontal" name="signUpForm" novalidate ng-submit="signUpForm.$valid && $ctrl.menu.authUser.menu.signUp($ctrl.model)">
+        <form class="form-horizontal" name="signUpForm" novalidate ng-submit="$ctrl.menu.authUser.menu.signUp($ctrl.model)">
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="email" class="col-sm-4 control-label">Enter your email adress:</label>
                 <div class="col-sm-8">
-                    <input type="email" style="width:300px;" ng-model="$ctrl.model.email" name="email" id="email" required>
+                    <input type="email" style="width:300px;" ng-model="$ctrl.model.email" name="email" id="email" ng-model-options="{updateOn: 'default', debounce: { default: 500, blur: 0 }}" required>
                 </div>
                 <div ng-messages="signUpForm.email.$error" class="col-sm-offset-4 col-sm-8">
+                    <div ng-message="required" class="required">Required field</div>
                     <div ng-message="email">This field must be a valid email address.</div>
-                    <!-- <div ng-message="required">Please, enter your email address.</div> -->
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="password" class="col-sm-4 control-label">Enter your password:</label>
                 <div class="col-sm-8">
-                    <input type="password" style="width:300px;" ng-model="$ctrl.model.password" name="password" id="password" ng-minlength="8" required>
+                    <input type="password" style="width:300px;" ng-model="$ctrl.model.password" name="password" id="password" ng-minlength="8" ng-model-options="{updateOn: 'default', debounce: { default: 500, blur: 0 }}" required>
                 </div>
                 <div ng-messages="signUpForm.password.$error" class="col-sm-offset-4 col-sm-8">
+                    <div ng-message="required" class="required">Required field</div>
                     <div ng-message="minlength">The password length must be 8 symbols at least.</div>
-                    <!-- <div ng-message="required">Please, enter your password.</div> -->
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="password_confirmation" class="col-sm-4 control-label">Enter the same password again:</label>
                 <div class="col-sm-8">
-                    <input type="password" style="width:300px;" ng-model="$ctrl.model.password_confirmation" name="password_confirmation" id="password_confirmation" ng-minlength="8" check-password-confirmation checking-password="$ctrl.model.password" required>
+                    <input type="password" style="width:300px;" ng-model="$ctrl.model.password_confirmation" name="password_confirmation" id="password_confirmation" ng-minlength="8" check-password-confirmation checking-password="$ctrl.model.password" ng-model-options="{updateOn: 'default', debounce: { default: 500, blur: 0 }}"
+                        required>
                 </div>
                 <div ng-messages="signUpForm.password_confirmation.$error" class="col-sm-offset-4 col-sm-8">
+                    <div ng-message="required" class="required">Required field</div>
                     <div ng-message="minlength">The password length must be 8 symbols at least.</div>
                     <div ng-message="check_password_confirmation">Entered passwords do not match each other.</div>
-                    <!-- <div ng-message="required">Please, enter your password.</div> -->
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group ">
                 <div class="col-sm-offset-4 col-sm-8 ">
-                    <button type="submit " class="btn btn-info ">Submit</button>
+                    <button type="submit " class="btn btn-info" ng-disabled="signUpForm.$invalid">Submit</button>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
