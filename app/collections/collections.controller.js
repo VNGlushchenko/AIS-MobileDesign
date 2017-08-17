@@ -1,4 +1,5 @@
-;(function () {
+;
+(function() {
 
     "use strict";
 
@@ -21,11 +22,11 @@
             CollectionModel.getAll.get().$promise.then(
                 response => {
                     let collectionsResponse = response;
-                    collectionsResponse.collections[0].avatar = '/app/images/iOS.png';
-                    collectionsResponse.collections[1].avatar = '/app/images/Android.jpg';
+                    collectionsResponse.collections[0].avatar = '/app/images/ios.png';
+                    collectionsResponse.collections[1].avatar = '/app/images/android.jpg';
                     vm.model.collections = collectionsResponse.collections;
-            });
-                    
+                });
+
         }
     }
 })();
