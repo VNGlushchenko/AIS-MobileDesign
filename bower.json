@@ -1,26 +1,33 @@
 {
-  "name": "ais-my-mobile-design",
-  "description": "training project",
-  "main": "index.js",
-  "authors": [
-    "Vladimir Glushchenko"
-  ],
-  "license": "ISC",
-  "keywords": [
-    "mobile",
-    "design"
-  ],
-  "homepage": "https://github.com/VNGlushchenko/AIS-MyMobileDesign#readme",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular-ui-router": "^1.0.6",
-    "owl.carousel": "^2.2.1"
-  }
+    "name": "ais-mymobiledesign",
+    "description": "training project",
+    "main": "index.js",
+    "authors": [
+        "Vladimir Glushchenko"
+    ],
+    "license": "ISC",
+    "keywords": [
+        "mobile",
+        "design"
+    ],
+    "homepage": "https://github.com/VNGlushchenko/AIS-MyMobileDesign#readme",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.3.7",
+        "jquery": "~3.2.1",
+        "ng-dialog": "~1.4.0",
+        "owl.carousel": "~2.2.1",
+        "angular-toastr": "~2.1.1",
+        "angular": "~1.6.5",
+        "angular-ui-router": "~1.0.6",
+        "angular-resource": "~1.6.5",
+        "angular-messages": "~1.6.5"
+    }
 }
