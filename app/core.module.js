@@ -19,6 +19,7 @@
                 transformResponse: function(data, headers) {
                     return {
                         data: JSON.parse(data)['data'],
+                        errors: JSON.parse(data)['errors'],
                         headers: headers()
                     }
                 }
