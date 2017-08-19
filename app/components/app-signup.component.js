@@ -22,7 +22,7 @@
 
                 vm.menu = {
                     authUser: UserModel
-                }
+                };
             }]
         })
 })();
