@@ -66,7 +66,7 @@
                     }
                     console.log(response);
                     console.dir(vm.errorsMessages.signUp);
-                    $q.reject();
+                    return $q.reject();
                 }
             );
         }
