@@ -12,7 +12,7 @@
                 password_confirmation: '<'
             },
             templateUrl: "app/components/app-signup.template.html",
-            controller: ['UserModel', function(UserModel) {
+            controller: ['UserModel', '$scope', function(UserModel, $scope) {
                 let vm = this;
                 vm.model = {
                     email: '',
@@ -21,8 +21,31 @@
                 };
 
                 vm.menu = {
-                    authUser: UserModel
+                    authUser: UserModel,
+                    submit: submit
                 };
+                
+                $scope.setValidity = function(field, error_key, error_bool) {
+                    $scope.signUpForm[field].$setValidity(error_key,  error_bool);
+                };
+
+                function submit(model) {
+                    vm.menu.authUser.menu.signUp(model).then(
+                        null,
+                        () => {
+                            if (vm.menu.authUser.errorsMessages.signUp.email) {
+                                $scope.setValidity('email','email', false);
+                            }
+                            if (vm.menu.authUser.errorsMessages.signUp.password) {
+                                $scope.setValidity('password','required', false);
+                            }
+
+                            if (vm.menu.authUser.errorsMessages.signUp.password_confirmation) {
+                                $scope.setValidity('password_confirmation','required', false);
+                            }
+                        }
+                    )
+                }
             }]
         })
 })();

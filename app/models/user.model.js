@@ -51,30 +51,22 @@
                     let errors = response.data.errors;
                     //email
                     if (errors.email.length > 1) {
-                        let emailMessages = '';
-                        for (let i=0; i < errors.email.length; i++) {
-                            emailMessages += `${i+1}. ${errors.email[i]}. `
-                        }
-                        vm.errorsMessages.signUp.email = emailMessages;
-                    } else vm.errorsMessages.signUp.email = errors.email[0];
+                        vm.errorsMessages.signUp.email = errors.email[1];
+                    } else {
+                        vm.errorsMessages.signUp.email = errors.email[0];
+                    }
+
                     //password
-                    if (errors.password.length > 1) {
-                        let passwordMessages = '';
-                        for (let i=0; i < errors.password.length; i++) {
-                            passwordMessages += `${i+1}. ${errors.password[i]}. `
-                        }
-                        vm.errorsMessages.signUp.password = passwordMessages;
-                    } else vm.errorsMessages.signUp.password = errors.password[0];
+                    if (errors.password.length) {
+                        vm.errorsMessages.signUp.password = errors.password[0];
+                    } 
                     //password_confirmation
-                    if (errors.password_confirmation.length > 1) {
-                        let passwordConfirmationMessages = '';
-                        for (let i=0; i < errors.password_confirmation.length; i++) {
-                            passwordConfirmationMessages += `${i+1}. ${errors.password_confirmation[i]}. `
-                        }
-                        vm.errorsMessages.signUp.password_confirmation = passwordConfirmationMessages;
-                    } else vm.errorsMessages.signUp.password_confirmation = errors.password_confirmation[0];
+                    if (errors.password_confirmation.length) {
+                       vm.errorsMessages.signUp.password_confirmation = errors.password_confirmation[0];
+                    }
                     console.log(response);
                     console.dir(vm.errorsMessages.signUp);
+                    $q.reject();
                 }
             );
         }
