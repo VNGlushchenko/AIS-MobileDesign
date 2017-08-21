@@ -34,14 +34,14 @@
                         null,
                         () => {
                             if (vm.menu.authUser.errorsMessages.signUp.email) {
-                                $scope.setValidity('email','email', false);
+                                $scope.setValidity('email','email_error', false);
                             }
                             if (vm.menu.authUser.errorsMessages.signUp.password) {
-                                $scope.setValidity('password','required', false);
+                                $scope.setValidity('password','password_error', false);
                             }
 
                             if (vm.menu.authUser.errorsMessages.signUp.password_confirmation) {
-                                $scope.setValidity('password_confirmation','required', false);
+                                $scope.setValidity('password_confirmation','password_confirmation_error', false);
                             }
                         }
                     )
