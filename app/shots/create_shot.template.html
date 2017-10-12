@@ -16,9 +16,9 @@
                 <label for="portfolio" class="col-sm-4 control-label">Is this shot for portfolio?</label>
                 <div class="col-sm-8">
                     <select id="portfolio" name="portfolio" ng-model="crsc.model.shot.portfolio">
-			          <option ng-value="false">No</option>
-			          <option ng-value="true">Yes</option>
-			        </select>
+                        <option ng-value="false">No</option>
+                        <option ng-value="true">Yes</option>
+                    </select>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
@@ -26,9 +26,9 @@
                 <label for="inspiration" class="col-sm-4 control-label">Is this shot for inspiration?</label>
                 <div class="col-sm-8">
                     <select id="inspiration" name="inspiration" ng-model="crsc.model.shot.inspiration">
-			          <option ng-value="false">No</option>
-			          <option ng-value="true">Yes</option>
-			        </select>
+                        <option ng-value="false">No</option>
+                        <option ng-value="true">Yes</option>
+                    </select>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
@@ -63,20 +63,23 @@
             <div class="form-group">
                 <label for="platform_ids" class="col-sm-4 control-label">List of IDs of platforms for new shot:</label>
                 <div class="col-sm-8">
-                    <textarea style="width:300px; height:100px;" ng-model="platform_ids" name="platform_ids" maxlength="1000" width="800px" id="platform_ids" placeholder="Provide multiple values in new lines (at least one required)." required></textarea>
+                    <textarea style="width:300px; height:100px;" ng-model="crsc.model.shot.platform_ids" name="platform_ids" maxlength="1000"
+                        width="800px" id="platform_ids" placeholder="Provide multiple values in new lines (at least one required)."
+                        required></textarea>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="tags" class="col-sm-4 control-label">List of of tags for new shot:</label>
                 <div class="col-sm-8">
-                    <textarea style="width:300px; height:100px;" ng-model="tags" name="tags" maxlength="1000" width="800px" id="tags" placeholder="Provide multiple values in new lines." required></textarea>
+                    <textarea style="width:300px; height:100px;" ng-model="crsc.model.tags" name="tags" maxlength="1000" width="800px" id="tags"
+                        placeholder="Provide multiple values in new lines." required></textarea>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
             <div class="form-group ">
                 <div class="col-sm-offset-4 col-sm-8 ">
-                    <button type="submit " class="btn btn-info ">Submit</button>
+                    <button type="submit" class="btn btn-info" ng-disabled="crsc.shotForm.$invalid">Submit</button>
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
