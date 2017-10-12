@@ -3,7 +3,7 @@
         <h3 class="text-center">Sign in</h3>
     </div>
     <div class="col-sm-offset-3 col-sm-6 well">
-        <form class="form-horizontal" name="signInForm" novalidate ng-submit="$ctrl.menu.authUser.menu.signIn($ctrl.model)">
+        <form class="form-horizontal" name="signInForm" novalidate ng-submit="$ctrl.menu.authUser.menu.signIn($ctrl.model, $ctrl.serverValidationMessage)">
             <!--____________________________________________________________________________________-->
             <div class="form-group">
                 <label for="email" class="col-sm-4 control-label">Email:</label>
@@ -24,7 +24,9 @@
                 </div>
                 <div ng-messages="signInForm.password.$error" class="col-sm-offset-4 col-sm-8">
                     <div ng-message="required" class="required">Required field</div>
-                    <!-- <div ng-message="signInForm.$invalid">You have entered the wrong email address or the password</div> -->
+                </div>
+                <div class="col-sm-offset-4 col-sm-8 sign-in-invalid" ng-if="$ctrl.menu.authUser.model.serverValidationMessage">
+                    {{$ctrl.menu.authUser.model.serverValidationMessage}}
                 </div>
             </div>
             <!--____________________________________________________________________________________-->
