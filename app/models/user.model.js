@@ -53,7 +53,10 @@
       return $resource('http://dev-api.mobile.design/api/auth/sign_in')
         .saveWithHeaders(enteringData)
         .$promise.then(
-          response => redirectAfterAuth(response),
+          response => {
+            vm.model.serverValidationMessage = '';
+            redirectAfterAuth(response);
+          },
           response => {
             vm.model.serverValidationMessage = response.data.errors[0];
           }
