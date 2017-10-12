@@ -16,18 +16,18 @@
         .curpointer {
             cursor: pointer;
         }
-        
+
         .material-icons.md-48 {
             position: absolute;
             right: 2px;
             bottom: 2px;
             background-color: white;
         }
-        
+
         img.shot {
             border: 1px solid lightblue;
         }
-        
+
         [ng-cloak] .loader {
             border: 16px solid #f3f3f3;
             /* Light grey */
@@ -41,7 +41,7 @@
             top: calc(50% - 60px);
             left: calc(50% - 60px);
         }
-        
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -50,20 +50,24 @@
                 transform: rotate(360deg);
             }
         }
-        
+
         .menu-item {
             padding-top: 12px;
         }
-        
+
         .menu-item-btn {
             padding-top: 8px;
         }
-        
+
         [ng-message].required {
             color: tomato;
         }
-        
+
         [ng-message] {
+            color: red;
+        }
+
+        .sign-in-invalid {
             color: red;
         }
     </style>
